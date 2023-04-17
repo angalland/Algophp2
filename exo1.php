@@ -13,9 +13,7 @@ function convertirMajRouge($texte){
     if (!isset($texte)){
         return "";
     }
-    //strtoupper($texte);
-    //"<span style=\"text-color:red;\"></span>"
-    echo "<span style=\"color:red;\">".mb_strtoupper($texte, 'UTF-8')."</span>";
+    return "<span style=\"color:red;\">".mb_strtoupper($texte, 'UTF-8')."</span>";
 }
 
-convertirMajRouge("Mon texte en paramètre");
+echo convertirMajRouge("Mon texte en paramètre");
