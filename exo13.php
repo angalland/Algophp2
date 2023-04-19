@@ -19,9 +19,9 @@ Class Voiture{
     private $_marque;
     private $_modele;
     private $_nbPortes;
-    private $_vitesseActuelle;
     public $_demarrer = 0;
-
+    
+    private static $_vitesseActuelle;
     private static $_nbVehicule = 0;
     
     //---------------------Constante ----------------------
@@ -33,7 +33,7 @@ Class Voiture{
         $this->_marque = $marque;
         $this->_modele = $modele;
         $this->_nbPortes = $nbPortes;
-        $this->_vitesseActuelle = $vitesseActuelle;
+        self::$_vitesseActuelle = $vitesseActuelle;
         self::$_nbVehicule++;
 
     }
@@ -53,7 +53,7 @@ Class Voiture{
     }
 
     public function getVitesseActuelle(){
-       return $this->_vitesseActuelle;
+       return self::$_vitesseActuelle;
     }
 
     public function getDemarrer(){
