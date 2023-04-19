@@ -12,13 +12,12 @@ echo $v1->getVitesseActuelle();*/
 /*$v1->setMarque("citroen"); la methode set permet de modiffier l'attribut
 echo $v1->getMarque();*/
 
-echo "Infos véhicule 1</br>
+/*echo "Infos véhicule 1</br>
         **************** </br>
         Nom et modèle du véhicule : ".$v1->getMarque()." ".$v1->getModele()."<br>"
         ."Nombre de portes : ".$v1->getNbPortes();
 
 echo "</br>";
-echo "</br>";
+echo "</br>";*/
 
-$v1->informationVehicule();
-var_dump($v1->informationVehicule());
+echo $v1->informationVehicule();
