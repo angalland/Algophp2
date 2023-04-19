@@ -40,15 +40,15 @@ echo $formatter->format(time('l d F Y'));*/
 };*/
 
 
-$formatter ="2018-02-23";
-function formaterDateFr($formatter){
+$date ="1980-05-12";
+function formaterDateFr($date){
        
        
        $formatter = new IntlDateFormatter('fr_FR', IntlDateFormatter::LONG, IntlDateFormatter::NONE);
-       echo $formatter->format(time())."</br>";
+       echo $formatter->format(date_create($date))."</br>";
 }
 
-echo formaterDateFr($formatter);
+echo formaterDateFr($date);
 
 
 
