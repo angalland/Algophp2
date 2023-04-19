@@ -17,3 +17,4 @@ echo $v1->getMarque();*/
 echo $v1->informationVehicule();
 $v1->setDemarrer(0);
 $v1->demarrerVoiture();
+$v1->vitesseVehicule();
