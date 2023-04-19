@@ -19,32 +19,38 @@ Class Voiture{
     private $_marque;
     private $_modele;
     private $_nbPortes;
-    private $_vitesseActuelle;
+    private $_vitesseActuelle = 0;
+    
 
 
-    // -------------------Constructeur, Get, Set -----------
-    public function __construct($marque, $modele, $nbPortes, $vitesseActuelle ){
+    // -------------------Constructeur --------------------
+    public function __construct($marque, $modele, $nbPortes, $vitesseActuelle){
         $this->_marque = $marque;
         $this->_modele = $modele;
         $this->_nbPortes = $nbPortes;
         $this->_vitesseActuelle = $vitesseActuelle;
+
     }
 
+    // -------------------------- Methode get -----------------
+
     public function getMarque(){
-        $this->_marque;
+       return $this->_marque;
     }
     
     public function getModele(){
-        $this->_modele;
+        return $this->_modele;
     }
 
     public function getNbPortes(){
-        $this->_nbPortes;
+       return $this->_nbPortes;
     }
 
     public function getVitesseActuelle(){
-        $this->_vitesseActuelle;
+       return $this->_vitesseActuelle;
     }
+
+    //--------------- Méthodes set -------------------
 
     public function setMarque($marque2){
         $this->_marque=$marque2;
@@ -64,13 +70,11 @@ Class Voiture{
 
 // ------------- Méthodes -----------------------------
 
-    public function demarrer(){
-        $this->_demarrer = 1;
+    public function informationVehicule(){
+        $result = "Infos véhicule 1</br>
+        **************** </br>
+        Nom et modèle du véhicule : ".$this->getMarque()." ".$this->getModele()."<br>"
+        ."Nombre de portes : ".$this->getNbPortes();
+        return $result;
     }
-
-    public function accelerer($acceler){
-        $this->_accelerer = $acceler;
-    }
-
-
 }
