@@ -15,5 +15,5 @@ echo $v1->getMarque();*/
 
 
 echo $v1->informationVehicule();
-$v1->demarrer();
+$v1->setDemarrer(0);
 $v1->demarrerVoiture();

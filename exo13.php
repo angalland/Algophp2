@@ -53,6 +53,10 @@ Class Voiture{
        return $this->_vitesseActuelle;
     }
 
+    public function getDemarrer(){
+        return $this->_demarrer;
+    }
+
     //--------------- Méthodes set -------------------
 
     public function setMarque($marque2){
@@ -74,8 +78,14 @@ Class Voiture{
     public function setdemarerVoiture($demarrerVoiture2){
         $this->_demarrerVoiture=$demarrerVoiture2;
     }
+    
+    public function setDemarrer($demarrer){
+        $this->_demarrer = $demarrer;
+    }
 
 // ------------- Méthodes -----------------------------
+
+// ------------ Information véhicule -----------------
 
     public function informationVehicule(){
         $result = "Infos véhicule 1</br>
@@ -85,15 +95,17 @@ Class Voiture{
         return $result;
     }
 
-    public function demarrer(){
-        $this->_demarrer = 1;
-    }
+// ------------ Démarrer véhicule ----------------------
+
+
 
     public function demarrerVoiture(){
-        if ($this->demarrer() == 1);
-            echo "</br>La voiture a démarré";
+        if ($this->getDemarrer() == 1){;
+            echo "</br>Le véhicule ".$this->getMarque()." est démarré";
+        } else {
+            echo "</br>Le véhicule ".$this->getMarque()." est à l'arrêt";
+        }
+    }
         
-
-    
-
 }
+    
