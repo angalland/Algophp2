@@ -93,26 +93,24 @@ Class Voiture{
         Nom et modèle du véhicule : ".$this->getMarque()." ".$this->getModele()."<br>"
         ."Nombre de portes : ".$this->getNbPortes();
 
+        $result .= $this->demarrerVoiture();
 
-        
-
-
-
+        $result .= $this->vitesseVehicule();
 
         return $result;
     }
  
-    // ------------ Démarrer véhicule ----------------------
+    // ------------ Démarrer véhicule ---------------------
     public function demarrerVoiture(){
       if ($this->getDemarrer() == 1){;
-         echo "</br>Le véhicule ".$this->getMarque()." est démarré";
+         echo "Le véhicule ".$this->getMarque()." est démarré</br>";
      } else {
-         echo "</br>Le véhicule ".$this->getMarque()." est à l'arrêt";
+         echo "Le véhicule ".$this->getMarque()." est à l'arrêt</br>";
      }
     }
 
     public function vitesseVehicule(){
-        echo "</br> Sa vitesse actuelle est de : ".$this->getVitesseActuelle()." km / h";
+        echo " Sa vitesse actuelle est de : ".$this->getVitesseActuelle()." km / h</br>";
     }
        
 }
