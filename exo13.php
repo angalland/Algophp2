@@ -112,9 +112,13 @@ Class Voiture{
      }
     }
 
+// ------------ Vitesse véhicule -----------------------
+
     public function vitesseVehicule(){
         return " Sa vitesse actuelle est de : ".$this->getVitesseActuelle()." km / h</br>";
     }
+
+// ------------- Compte le nombre de véhicule ---------
      
     public static function combien(){
         return self::$_nbVehicule;
