@@ -21,6 +21,8 @@ Class Voiture{
     private $_nbPortes;
     private $_vitesseActuelle;
     public $_demarrer = 0;
+
+    private static $_nbVehicule = 0;
     
     //---------------------Constante ----------------------
 
@@ -32,6 +34,7 @@ Class Voiture{
         $this->_modele = $modele;
         $this->_nbPortes = $nbPortes;
         $this->_vitesseActuelle = $vitesseActuelle;
+        self::$_nbVehicule++;
 
     }
 
@@ -88,31 +91,34 @@ Class Voiture{
 // ------------ Information véhicule -----------------
 
     public function informationVehicule(){
-        $result = "Infos véhicule 1</br>
+        $result = "Infos véhicule ".$this->combien()."</br>
         **************** </br>
         Nom et modèle du véhicule : ".$this->getMarque()." ".$this->getModele()."<br>"
-        ."Nombre de portes : ".$this->getNbPortes();
-
+        ."Nombre de portes : ".$this->getNbPortes()."</br>";
         $result .= $this->demarrerVoiture();
-
         $result .= $this->vitesseVehicule();
+        
+
 
         return $result;
     }
  
-    // ------------ Démarrer véhicule ---------------------
+// ------------ Démarrer véhicule ---------------------
     public function demarrerVoiture(){
       if ($this->getDemarrer() == 1){;
-         echo "Le véhicule ".$this->getMarque()." est démarré</br>";
+         return "Le véhicule ".$this->getMarque()." est démarré</br>";
      } else {
-         echo "Le véhicule ".$this->getMarque()." est à l'arrêt</br>";
+         return "Le véhicule ".$this->getMarque()." est à l'arrêt</br>";
      }
     }
 
     public function vitesseVehicule(){
-        echo " Sa vitesse actuelle est de : ".$this->getVitesseActuelle()." km / h</br>";
+        return " Sa vitesse actuelle est de : ".$this->getVitesseActuelle()." km / h</br>";
     }
-       
+     
+    public static function combien(){
+        return self::$_nbVehicule;
+    }
 }
     
     

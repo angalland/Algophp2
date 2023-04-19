@@ -3,7 +3,6 @@
 require_once ("exo13.php");
 
 $v1 = new Voiture("Peugeot", "408",5, 50);
-$v2 = new Voiture("Citroën", "C4", 3, 50);
 
 /*echo $v1->getMarque(); la méthode get permet d'appeler l'attribut
 echo $v1->getModele();
@@ -15,9 +14,12 @@ echo $v1->getMarque();*/
 
 
 
+$v1->setDemarrer(1);
 echo $v1->informationVehicule();
 echo "</br></br></br>";
-$v1->setDemarrer(0);
+$v2 = new Voiture("Citroën", "C4", 3, 0);
 //$v1->demarrerVoiture();
 //$v1->vitesseVehicule();
 echo $v2->informationVehicule();
+
+
