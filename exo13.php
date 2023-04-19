@@ -19,9 +19,12 @@ Class Voiture{
     private $_marque;
     private $_modele;
     private $_nbPortes;
-    private $_vitesseActuelle = 0;
+    private $_vitesseActuelle;
+    public $_demarrer = 0;
     
+    //---------------------Constante ----------------------
 
+    
 
     // -------------------Constructeur --------------------
     public function __construct($marque, $modele, $nbPortes, $vitesseActuelle){
@@ -32,7 +35,7 @@ Class Voiture{
 
     }
 
-    // -------------------------- Methode get -----------------
+    // -------------------------- Methode get -------------
 
     public function getMarque(){
        return $this->_marque;
@@ -68,6 +71,10 @@ Class Voiture{
         $this->_marque=$vitesseActuelle2;
     }
 
+    public function setdemarerVoiture($demarrerVoiture2){
+        $this->_demarrerVoiture=$demarrerVoiture2;
+    }
+
 // ------------- Méthodes -----------------------------
 
     public function informationVehicule(){
@@ -77,4 +84,16 @@ Class Voiture{
         ."Nombre de portes : ".$this->getNbPortes();
         return $result;
     }
+
+    public function demarrer(){
+        $this->_demarrer = 1;
+    }
+
+    public function demarrerVoiture(){
+        if ($this->demarrer() == 1);
+            echo "</br>La voiture a démarré";
+        
+
+    
+
 }
