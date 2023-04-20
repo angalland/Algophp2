@@ -23,7 +23,7 @@ Class Voiture{
     
     
     private  $_demarrer = 0;
-    private  $_vitesseActuelle = 0;
+    private  $_vitesseActuelle;
     private $_acceleration = 0;
 
     private static $_nbVehicule = 0;
@@ -143,7 +143,8 @@ Class Voiture{
  
     public function vitesseVehicule(){
         $affiche  = $this->getMarque()." ".$this->getModele();
-        return "La vitesse du véhicule ".$affiche." est de : ".$this->getVitesseActuelle()." km/h";
+        $vitesseVehicule = (!$this->getDemarrer()) ? "La vitesse du véhicule ".$affiche." est de : 0 km/h" : "La vitesse du véhicule ".$affiche." est de : ".$this->getVitesseActuelle()." km/h";
+        return $vitesseVehicule;
     }
     
     
@@ -170,12 +171,12 @@ Class Voiture{
     
 }
 
+//-----------------------------------------------------------------------
 
 /*echo $v1->getMarque(); la méthode get permet d'appeler l'attribut
 echo $v1->getModele();
 echo $v1->getNbportes();
 echo $v1->getVitesseActuelle();
-
 /*$v1->setMarque("citroen"); la methode set permet de modiffier l'attribut
 echo $v1->getMarque();*/
 
@@ -184,45 +185,38 @@ echo $v1->getMarque();*/
 $v1 = new Voiture("Peugeot", "408",5);
 $v2 = new Voiture("Citroën", "C4", 3);
 
-// ----------------------Véhicule 1 -----------------
+// -- -----------------Test class voiture -----------------------------
+
+// ----------------------Véhicule 1 -------------------------------
 $v1->setDemarrer(1);
 $v1->demarrerVoiture1();
-
 echo "</br>";
-
 $v1->setVitesseActuelle(50);
 $v1->accelererVehicule();
+echo "</br></br>";
 
-echo "</br>";
+// ------------------------véhicule 2-----------------------------
 
-// ------------------------véhicule 2--------------
 $v2->setDemarrer(0);
 $v2->demarrerVoiture1();
 echo "</br>";
-// $v2->setDemarrer(0);
-// $v2->demarrerVoiture1();
-
-
-$v2->setVitesseActuelle(20);
+$v2->setVitesseActuelle(50);
 $v2->accelererVehicule();
+echo"</br></br>";
 
-echo"</br>";
+// ------------------------- Vitesse du véhicule -----------------
 
-// ------------------------- Vitesse du véhicule ---------
 echo $v1->vitesseVehicule();
 echo "<br>";
 echo $v2->vitesseVehicule();
-
 echo"</br>";
 echo"</br>";
 
 // --------------------------- information véhicule -------------
 
 echo $v1->informationVehicule();
-
 echo"</br>";
 echo"</br>";
-
 echo $v2->informationVehicule();
     
     
