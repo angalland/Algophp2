@@ -18,7 +18,7 @@ echo $v1->getMarque();*/
 
 
 
-// Véhicule 1
+/* Véhicule 1
 $v1 = new Voiture("Peugeot", "408",5);
 $v1->setDemarrer(1);
 $v1->demarrerVoiture();
@@ -44,7 +44,49 @@ echo $v2->informationVehicule();
 $v2->demarrerVoiture1();
 echo "<br>";
 $v2->setacceleration(20);
+$v2->accelererVehicule();*/
+
+$v1 = new Voiture("Peugeot", "408",5);
+$v2 = new Voiture("Citroën", "C4", 3);
+
+// ----------------------Véhicule 1 -----------------
+$v1->setDemarrer(1);
+$v1->demarrerVoiture1();
+
+echo "</br>";
+
+$v1->setVitesseActuelle(30);
+$v1->accelererVehicule();
+
+echo "</br>";
+
+// ------------------------véhicule 2--------------
+
+$v2->setDemarrer(1);
+$v2->demarrerVoiture1();
+
+echo"</br>";
+
+$v2->setVitesseActuelle(20);
 $v2->accelererVehicule();
+
+echo"</br>";
+
+echo $v1->vitesseVehicule();
+echo $v2->vitesseVehicule();
+
+echo"</br>";
+echo"</br>";
+
+echo $v1->informationVehicule();
+
+echo"</br>";
+echo"</br>";
+
+echo $v2->informationVehicule();
+
+
+
 
 
 
