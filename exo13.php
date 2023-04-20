@@ -19,9 +19,11 @@ Class Voiture{
     private $_marque;
     private $_modele;
     private $_nbPortes;
-    public $_demarrer = 0;
     
-    private static $_vitesseActuelle;
+    
+    private  $_demarrer = 0;
+    private  $_vitesseActuelle = 0;
+
     private static $_nbVehicule = 0;
     
     //---------------------Constante ----------------------
@@ -29,12 +31,13 @@ Class Voiture{
     
 
     // -------------------Constructeur --------------------
-    public function __construct($marque, $modele, $nbPortes, $vitesseActuelle){
+    public function __construct($marque, $modele, $nbPortes){
         $this->_marque = $marque;
         $this->_modele = $modele;
         $this->_nbPortes = $nbPortes;
-        self::$_vitesseActuelle = $vitesseActuelle;
         self::$_nbVehicule++;
+        $this->_demarrer;
+        $this->_vitesseActuelle;
 
     }
 
@@ -53,7 +56,7 @@ Class Voiture{
     }
 
     public function getVitesseActuelle(){
-       return self::$_vitesseActuelle;
+       return $this->_vitesseActuelle;
     }
 
     public function getDemarrer(){
@@ -67,23 +70,23 @@ Class Voiture{
     }
 
     public function setModele($modele2){
-        $this->_marque=$modele2;
+        $this->_modele=$modele2;
     }
 
     public function setNbPortes($nbPortes2){
-        $this->_marque=$nbPortes2;
+        $this->_nbPortes=$nbPortes2;
     }
 
     public function setVitesseActuelle($vitesseActuelle2){
-        $this->_marque=$vitesseActuelle2;
+        $this->_vitesseActuelle=$vitesseActuelle2;
     }
 
     public function setdemarerVoiture($demarrerVoiture2){
         $this->_demarrerVoiture=$demarrerVoiture2;
     }
     
-    public function setDemarrer($demarrer){
-        $this->_demarrer = $demarrer;
+    public function setDemarrer($demarrer2){
+        $this->_demarrer = $demarrer2;
     }
 
 // ------------- Méthodes -----------------------------
