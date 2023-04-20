@@ -50,7 +50,7 @@ class Voitures {
     
 }
 Class VoituresElec extends Voitures{
-    private $_autonomie;
+    protected $_autonomie;
     
     public function __construct($marques, $modeles, $autonomie){
         parent::__construct($marques, $modeles);
@@ -66,7 +66,7 @@ Class VoituresElec extends Voitures{
     }
     
     public function getInfos(){
-        return $this->getMarques()." ".$this->getModeles()." ".$this->getAutonomie();
+        return  parent::getInfos()." ".$this->getAutonomie();
     }
 
 }   
