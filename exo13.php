@@ -23,6 +23,7 @@ Class Voiture{
     
     private  $_demarrer = 0;
     private  $_vitesseActuelle = 0;
+    private $_acceleration = 0;
 
     private static $_nbVehicule = 0;
     
@@ -38,6 +39,7 @@ Class Voiture{
         self::$_nbVehicule++;
         $this->_demarrer;
         $this->_vitesseActuelle;
+        $this->_acceleration;
 
     }
 
@@ -61,6 +63,10 @@ Class Voiture{
 
     public function getDemarrer(){
         return $this->_demarrer;
+    }
+
+    public function getAcceleration(){
+        return $this->_acceleration;
     }
 
     //--------------- Méthodes set -------------------
@@ -89,6 +95,10 @@ Class Voiture{
         $this->_demarrer = $demarrer2;
     }
 
+    public function setacceleration($acceleration2){
+        $this->_acceleration = $acceleration2;
+    }
+
 // ------------- Méthodes -----------------------------
 
 // ------------ Information véhicule -----------------
@@ -108,7 +118,7 @@ Class Voiture{
  
 // ------------ Démarrer véhicule ---------------------
     public function demarrerVoiture(){
-      if ($this->getDemarrer() == 1){;
+      if ($this->getDemarrer() == 1){
          return "Le véhicule ".$this->getMarque()." est démarré</br>";
      } else {
          return "Le véhicule ".$this->getMarque()." est à l'arrêt</br>";
@@ -118,7 +128,7 @@ Class Voiture{
 // ------------ Vitesse véhicule -----------------------
 
     public function vitesseVehicule(){
-        return " Sa vitesse actuelle est de : ".$this->getVitesseActuelle()." km / h</br>";
+        return " Sa vitesse actuelle est de : ".$this->accelererVehicule()." km / h</br>";
     }
 
 // ------------- Compte le nombre de véhicule ---------
@@ -126,6 +136,30 @@ Class Voiture{
     public static function combien(){
         return self::$_nbVehicule;
     }
+
+// ------------ Le véhicule démarre -----------------------
+
+    public function demarrerVoiture1(){
+        if ($this->getDemarrer() == 1){
+            echo "Le véhicule ".$this->getMarque()." ".$this->getModele()." démarre";
+        } else {
+            echo "Le véhicule ".$this->getMarque()." ".$this->getModele()." est stoppé";
+        }
+    }
+
+// ------------ Le vehicule accélère ---------------------
+
+    public function accelererVehicule(){
+        if ($this->getAcceleration() == 0){
+            echo "Le véhicule ".$this->getMarque()." ".$this->getModele()." veut accélerer de ".$this->getAcceleration()."</br>
+            Pour accélerer, il faut démarrer le véhicule ".$this->getMarque()." ".$this->getModele();
+        } else {
+            echo "Le véhicule ".$this->getMarque()." ".$this->getModele()." accélère de ".$this->getAcceleration()."km / H";
+        }
+    }
+
+
+
 }
     
     
