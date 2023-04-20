@@ -9,7 +9,7 @@ adresse e-mail a le bon format.</p>
 $email = "elan@elan-formation.fr";
 
 function validerEmail($email){
-    if (filter_var($email, FILTER_VALIDATE_EMAIL) == true){ 
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)){ 
         return "L'adresse ".$email." est une adresse e-mail valide.";
     } else {
         return "L'adresse ".$email." est une adresse e-mail invalide";
