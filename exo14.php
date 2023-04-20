@@ -41,33 +41,44 @@ class Voitures {
     public function setModeles($modeles1){
         return $this->_modeles = $modeles1;
     }
-
+    
     public function getInfos(){
         return $this->getMarques()." ".$this->getModeles();
     }
-
-// ------------------------ Class fille ---------------------
-
+    
+    // ------------------------ Class fille ---------------------
+    
 }
-Class VoitureElec extends Voitures{
+Class VoituresElec extends Voitures{
     private $_autonomie;
-
+    
     public function __construct($marques, $modeles, $autonomie){
         parent::__construct($marques, $modeles);
         $this->_autonomie = $autonomie;
     }
-
+    
     public function getAutonomie(){
         return $this->_autonomie;
     }
-
+    
     public function setAutonomie($autonomie1){
         return $this->_autonomie = $autonomie1;
     }
-
+    
     public function getInfos(){
-        return $this->getInfos()." ".$this->getAutonomie();
+        return $this->getMarques()." ".$this->getModeles()." ".$this->getAutonomie();
     }
 
-}    
+}   
+
+
+//  -------------------------------- exo 14 ---------------------------
+
+$v1 = new Voitures ("Peugeot", "408");
+$ve1 = new VoituresElec ("BMW", "I3", 100);
+
+echo $v1->getInfos()."</br>";
+echo $ve1->getInfos()."</br>";
+
+
 
